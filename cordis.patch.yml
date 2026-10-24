@@ -1,0 +1,10 @@
+# dsh-copilot-bridge bundle patch.
+#
+# The plugin exports one tool, `copilot_ask`, which runs the official
+# `copilot` CLI in ask, agent, or plan mode. `read` is always allowed;
+# `write` and `shell` each require a one-shot DSH approval before the CLI
+# starts. Set `defaultModel: ""` to omit --model; `defaultAgent` supplies the
+# custom agent for mode=agent when the call omits one.
+- insert:
+    - id: copilot-bridge
+      name: dsh-copilot-bridge

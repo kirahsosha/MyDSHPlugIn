@@ -1,0 +1,33 @@
+{
+  "name": "dsh-copilot-bridge",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Run the official GitHub Copilot CLI as a DSH tool with ask/agent/plan modes, model fallback, and one-shot approval for write and shell access.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.6"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}
